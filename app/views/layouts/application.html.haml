@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpace
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+
+
+    %div.header
+  %div.header__left
+    %div.header__seo
+      seo
+  %div.header__right
+    %div.header__title
+      %sample
+      %p
+      Members: seo neko
+
+    %div.header__edit
+      %= link_to('edit', {})
+    
+    = yield
+
