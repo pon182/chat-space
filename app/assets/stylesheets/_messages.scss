@@ -1,0 +1,191 @@
+.body{
+    height: 100vh;
+    width: 100vw;
+}
+
+                                        // 登録しました
+.body-top{
+    width: 100vw;
+    text-align: center;
+}
+
+                                        // ↑以外のすべて
+.body-main{
+    height: 100vh;
+    width: 100vw;
+
+}
+
+
+                                        // 左大枠
+.body-left{
+    height: 100vh;
+    width: 300px;
+    float: left;
+    background-color: yellow;
+    color: #FFFFFF;
+}
+
+                                        // 左ヘッダー
+.body-left-header{
+    height: 100px;
+    background-color:#253141;
+    padding: 0px 20px;
+
+}
+
+.left-header_user-name{
+    font-size:16px;
+    float: left;
+    margin-top: 40px;
+}
+
+.left-header_icon{
+    padding-top:40px;
+    float: right;
+}
+
+
+                                        // 左下
+.body-left-group{
+    height: calc( 100vh - 120px );
+    width: 260px;
+    background-color: #2F3E51; 
+    padding: 20px 20px 0; 
+}
+
+
+.group{
+    margin-bottom: 40px;
+}
+
+.left-group_name{
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.left-group_text{
+    font-size: 11px;
+}
+
+
+                                        // 右大枠
+.body-right{
+    
+}
+
+                                        // 右ヘッダー
+.body-right-header{
+    float: left;
+    height: 100px;
+    width: calc( 100vw - 380px );
+    padding: 0px 40px;
+    border-bottom:solid 1px #eee;
+}
+
+.crrent-group{
+    margin-top:35px;
+    float: left;
+}
+
+.header_group-name{
+    font-size: 20px;
+    padding: 3px 0px 3px;
+}
+
+.header_member-list{
+    font-size:12px;
+    margin-top:15px;
+    padding: 3px 0px 3px;
+    color: #999999;
+}
+
+.header_edit{
+    float: right;
+    margin-top: 30px;
+    line-height: 36px;
+    padding: 0px 20px;
+    color: #38AEF0;
+    border-style: solid;
+    font-size:16px;
+    border-width: 1px;  
+    padding-top:2px;
+}
+
+                                        // 右メイン
+.body-right-main{
+    height: calc( 100vh - 282px );
+    width: calc( 100vw - 380px );
+    background-color: #FAFAFA;
+    padding: 46px 40px;
+    float: left;
+}
+
+.messege{
+    min-height: 45px;
+    margin-bottom: 40px;
+}
+
+.upper-info{
+    font-size: 16px;
+    color: #434A54;
+    display: inline;
+    left: 50px;
+}
+
+.upper-info_date{
+    font-size: 12px;
+    color:  #999999;
+    margin-left: 10px;
+    display: inline;
+}
+
+.messege_text{
+    font-size: 14px;
+    color: #434A54;
+    margin-top: 10px;
+}
+
+                                        // 右下投稿
+.body-right-footer{
+    background-color: #DDDDDD;
+    float: left;
+    height: 50px;
+    width: calc( 100vw - 380px );
+    padding: 20px 40px;
+
+
+}
+
+.form{
+    font-size: 0px;
+}
+
+.input_box{
+    height: 50px;
+    width: calc( 100vw - 550px);
+    float: left;
+    font-size: 16px;
+    padding:0px 40px 0px 10px;
+    position: relative;
+    border-style:none;
+}
+
+.fa.fa-image{
+    position: absolute;
+    right: 170px;
+    bottom: 15px;
+    font-size:20px;
+}
+
+.submit{
+    width: 100px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 30px;
+    float: left;
+    font-size: 16px;
+    background-color:#38AEF0;
+    color: #FFFFFF;
+    border-style:none;
+}
