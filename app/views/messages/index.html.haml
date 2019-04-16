@@ -1,29 +1,56 @@
 
     
 .body
+
   .body-top
     登録完了しました。  
-  .body-left
-    .body-left-header
-      .left-header_user-name
-        seo
-      .left-header_icon
-        %i.fa.fa-edit
-        %i.fa.fa-cog
-    .body-left-group
-      .left-group_name
-        XYZ
-      .left-group_text
-        good by world
 
-  .body-right
-    .body-right-header
-      .right-header_group-name
-        sample
-      .right-header_member-list
-        Members: seo neko
-      .right-header_edit
-        Edit
-    .body-right-main
-    .body-right-footer
-          
+
+  .body-main
+    .body-left
+      .body-left-header
+        .left-header_user-name
+          %strong
+            aaaaaa
+        .left-header_icon
+          %i.fa.fa-edit
+          %i.fa.fa-cog
+      .body-left-group
+        .group
+          .left-group_name
+            XYZ
+          .left-group_text
+            まだメッセージはありません
+
+    .body-right
+
+      .body-right-header
+        .crrent-group
+          .header_group-name
+            XYZa
+          .header_member-list
+            Members: seo neko
+        .header_edit
+          Edit
+
+
+
+      .body-right-main
+        .messege
+          .upper-info
+            %strong
+              XYZ
+          .upper-info_date
+            1998/01/17
+          .messege_text
+            tttttttttttttt
+
+
+      .body-right-footer
+        
+        %form{:action => "/", :method => "post" , class: "form"}
+          %input{ name: "text" , placeholder: "type a messege" , type: "textarea" , class: "input_box"}
+        %i.fa.fa-image
+        .right-footer-send
+          %input{ name: "commit"  , type: "submit", class: "submit" , value: "Send"}
+              
