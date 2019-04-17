@@ -27,14 +27,14 @@
 }
 
                                         // 左ヘッダー
-.body-left-header{
+.body-left--header{
     height: 100px;
     background-color:#253141;
     padding: 0px 20px;
 
 }
 
-.left-header_user-name{
+.left-header--user-name{
     font-size:16px;
     float: left;
     margin-top: 40px;
@@ -46,14 +46,14 @@
     text-decoration: none
 }
 
-.left-header_icon{
+.left-header__icon{
     padding-top:40px;
     float: right;
 }
 
 
                                         // 左下
-.body-left-group{
+.body-left--group{
     height: calc( 100vh - 120px );
     width: 260px;
     background-color: #2F3E51; 
@@ -65,12 +65,12 @@
     margin-bottom: 40px;
 }
 
-.left-group_name{
+.left-group--name{
     font-size:15px;
     margin-bottom:5px;
 }
 
-.left-group_text{
+.left-group--text{
     font-size: 11px;
 }
 
@@ -81,7 +81,7 @@
 }
 
                                         // 右ヘッダー
-.body-right-header{
+.body-right--header{
     float: left;
     height: 100px;
     width: calc( 100vw - 380px );
@@ -94,19 +94,19 @@
     float: left;
 }
 
-.header_group-name{
+.header--group-name{
     font-size: 20px;
     padding: 3px 0px 3px;
 }
 
-.header_member-list{
+.header--member-list{
     font-size:12px;
     margin-top:15px;
     padding: 3px 0px 3px;
     color: #999999;
 }
 
-.header_edit{
+.header__edit{
     float: right;
     margin-top: 30px;
     line-height: 36px;
@@ -119,7 +119,7 @@
 }
 
                                         // 右メイン
-.body-right-main{
+.body-right--main{
     height: calc( 100vh - 282px );
     width: calc( 100vw - 380px );
     background-color: #FAFAFA;
@@ -139,21 +139,21 @@
     left: 50px;
 }
 
-.upper-info_date{
+.upper-info__date{
     font-size: 12px;
     color:  #999999;
     margin-left: 10px;
     display: inline;
 }
 
-.messege_text{
+.messege--text{
     font-size: 14px;
     color: #434A54;
     margin-top: 10px;
 }
 
                                         // 右下投稿
-.body-right-footer{
+.body-right--footer{
     background-color: #DDDDDD;
     float: left;
     height: 50px;
