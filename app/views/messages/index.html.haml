@@ -8,52 +8,52 @@
 
   .body-main
     .body-left
-      .body-left-header
-        .left-header_user-name
+      .body-left--header
+        .left-header--user-name
           %strong
             aaaaaa
-        .left-header_icon
+        .left-header__icon
           = link_to '/new' ,class: "link" do
             %i.fa.fa-edit
           = link_to '/new' ,class: " link" do
             %i.fa.fa-cog
-      .body-left-group
+      .body-left--group
         .group
-          .left-group_name
+          .left-group--name
             XYZ
-          .left-group_text
+          .left-group--text
             まだメッセージはありません
 
     .body-right
 
-      .body-right-header
+      .body-right--header
         .crrent-group
-          .header_group-name
+          .header--group-name
             XYZa
-          .header_member-list
+          .header--member-list
             Members: seo neko
-        .header_edit
+        .header__edit
           Edit
 
-      .body-right-main
+      .body-right--main
         .messege
           .upper-info
             %strong
               XYZ
-          .upper-info_date
+          .upper-info__date
             1998/01/17
-          .messege_text
+          .messege--text
             tttttttttttttt
 
 
-      .body-right-footer
+      .body-right--footer
         
         %form{:action => "/", :method => "post" , class: "form"}
           %input{ name: "text" , placeholder: "type a messege" , type: "textarea" , class: "input_box"}
           -# %input{ name: "image" ,  type: "file", class: "fa fa-image" } 未解決
           %i.fa.fa-image
           
-        .right-footer-send
+        .right-footer__submit
           %input{ name: "commit"  , type: "submit", class: "submit" , value: "Send"}
               
 
