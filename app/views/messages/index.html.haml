@@ -2,9 +2,6 @@
     
 .body
 
-  .body-top
-    登録完了しました。  
-
 
   .body-main
     .body-left
@@ -13,9 +10,9 @@
           %strong
             aaaaaa
         .left-header__icon
-          = link_to '/new' ,class: "link" do
+          = link_to "/users/#{current_user.id}/edit" ,class: "link" do
             %i.fa.fa-edit
-          = link_to '/new' ,class: " link" do
+          = link_to '/' ,class: " link" do
             %i.fa.fa-cog
       .body-left--group
         .group

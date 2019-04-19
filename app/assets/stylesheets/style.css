@@ -1,3 +1,5 @@
 @import "rest.scss";
 @import "messages.scss";
-@import "user.scss"
+@import "user.scss";
+@import "colors.scss";
+@import "flash.scss"
