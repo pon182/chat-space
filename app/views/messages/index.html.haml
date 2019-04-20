@@ -4,22 +4,7 @@
 
 
   .body-main
-    .body-left
-      .body-left--header
-        .left-header--user-name
-          %strong
-            aaaaaa
-        .left-header__icon
-          = link_to "/users/#{current_user.id}/edit" ,class: "link" do
-            %i.fa.fa-edit
-          = link_to '/' ,class: " link" do
-            %i.fa.fa-cog
-      .body-left--group
-        .group
-          .left-group--name
-            XYZ
-          .left-group--text
-            まだメッセージはありません
+    = render 'shared/side_bar'
 
     .body-right
 
@@ -29,9 +14,9 @@
             XYZa
           .header--member-list
             Members: seo neko
-        .header__edit
-          Edit
-
+        = link_to "/groups/#{current_user.id}/edit" ,class:  "link" do
+          .header__edit
+            edit
       .body-right--main
         .messege
           .upper-info
