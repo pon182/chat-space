@@ -1,0 +1,20 @@
+.body-left
+  .body-left--header
+    .left-header--user-name
+      %strong
+        aaaaaa
+    .left-header__icon
+      = link_to "/groups/new" ,class: "link" do
+        %i.fa.fa-edit
+      = link_to "/users/#{current_user.id}/edit" ,class: " link" do
+        %i.fa.fa-cog
+  .body-left--group
+    .groups
+      .group
+        - current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .link
+              .group__name.link
+                = group.name
+              .group__message.link
+                メッセージはまだありません。
