@@ -1,7 +1,10 @@
 $light_blue: #38AEF0;
 $alert_orange: orange;
 
-
+.header__flash{
+  z-index: 1;
+  width: 100vw;
+}
 
 
 .notification {
