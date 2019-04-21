@@ -1,14 +1,13 @@
-
-    
 .body
-
-
+    
+  
   .body-main
     = render 'shared/side_bar'
 
     .body-right
 
       .body-right--header
+
         .crrent-group
           .header--group-name
             XYZa
@@ -18,26 +17,15 @@
           .header__edit
             edit
       .body-right--main
-        .messege
-          .upper-info
-            %strong
-              XYZ
-          .upper-info__date
-            1998/01/17
-          .messege--text
-            tttttttttttttt
+        =render 'shared/message.html.haml'
 
 
       .body-right--footer
-        
-        %form{:action => "/", :method => "post" , class: "form"}
-          %input{ name: "text" , placeholder: "type a messege" , type: "textarea" , class: "input_box"}
-          -# %input{ name: "image" ,  type: "file", class: "fa fa-image" } 未解決
-          %i.fa.fa-image
-          
-        .right-footer__submit
-          %input{ name: "commit"  , type: "submit", class: "submit" , value: "Send"}
-              
-
-     
-          
+        .form
+          = form_for [@group, @message] do |f|
+            = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+            .form__mask
+              = f.label :image, class: 'form__mask__image' do
+                = fa_icon 'picture-o', class: 'icon'
+                = f.file_field :image, class: 'hidden'
+            = f.submit 'Send', class: 'form__submit'
