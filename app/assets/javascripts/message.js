@@ -1,8 +1,7 @@
 $(function (){
   function buildHTML(message){
-    var addContent = message.content !== true ? message.content : null
-    var addImage = message.image !== null ?  `<img src= "${message.image_url}"  class = "lower-message__image" alt="">` : ""
-
+    var addImage = message.image_url == null ?  "" : `<img src= "${message.image_url}"  class = "lower-message__image" alt="">` 
+    console.log(message.image)
 
     var html =`<div class ="group__comment">
                 <strong>
@@ -12,7 +11,7 @@ $(function (){
                    ${message.date}
                 </div>
                 <div class="comment__text">
-                  <p>${addContent}</p>
+                  <p>${message.content}</p>
                   ${addImage}
                 </div>
               </div>`
@@ -23,7 +22,7 @@ $(function (){
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     $('.body-right--main').animate({scrollTop: $('.body-right--main')[0].scrollHeight}, 'fast');
-  
+   
     var formData = new FormData(this);
     var href = window.location.href
     
@@ -39,14 +38,12 @@ $(function (){
 
     .done(function(data){
       var html = buildHTML(data);
-      $('.form__message').val('');
-      $(message_image).val('');
+      $('.new_message')[0].reset();
       $('.upper-info').append(html);
       $('.form__submit').removeAttr('disabled');
     })
 
     .fail(function(){
-      $('.form__message').val('')
       $('.form__submit').attr('disabled', false);
       alert('テキスト入力')
     })
