@@ -1,7 +1,6 @@
 $(function (){
   function buildHTML(message){
     var addImage = message.image_url == null ?  "" : `<img src= "${message.image_url}"  class = "lower-message__image" alt="">` 
-    console.log(message.image)
 
     var html =`<div class ="group__comment">
                 <strong>
