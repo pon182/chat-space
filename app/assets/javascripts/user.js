@@ -26,7 +26,6 @@ $(function(){
       dataType: 'json'
     })
 
-
     .done(function(users){
       // 検索した要素を削除
       $("#user-search-result").empty()
@@ -48,10 +47,7 @@ $(function(){
       
     .fail(function(){
       alert("ユーザー検索に失敗しました")
-    })
-
-
-  
+    });
     });
 
 
@@ -60,10 +56,8 @@ $(function(){
 // ユーザー追加したら検索欄から削除
       $(this).parent().remove();
     
-
       var user_id = $(this).data("user-id")
       var user_name = $(this).attr("data-user-name")
-
 
       var userAddHtml = `<div class='chat-group-user clearfix js-chat-member' id="${user_id}">
                           <input name="group[user_ids][]" type='hidden' value="${user_id}">
@@ -72,9 +66,6 @@ $(function(){
                         </div>`
                         $(".chat-group-users").append(userAddHtml)
                         });
-
-
-
 
 // 削除ボタン
     $(".chat-group-users").on("click",".user-search-remove",function(){
