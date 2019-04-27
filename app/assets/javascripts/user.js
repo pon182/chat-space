@@ -36,8 +36,6 @@ $(function(){
           users.forEach(function(user){
             appendUser(user);
           })
-          }else{
-            ""
           }
         }
         else{
@@ -55,7 +53,7 @@ $(function(){
     $(".chat-group-form__search").on("click",'.user-search-add',function(){
 // ユーザー追加したら検索欄から削除
       $(this).parent().remove();
-      
+
       var user_id = $(this).data("user-id")
       var user_name = $(this).attr("data-user-name")
 
