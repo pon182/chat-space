@@ -55,7 +55,7 @@ $(function(){
     $(".chat-group-form__search").on("click",'.user-search-add',function(){
 // ユーザー追加したら検索欄から削除
       $(this).parent().remove();
-    
+      
       var user_id = $(this).data("user-id")
       var user_name = $(this).attr("data-user-name")
 
@@ -71,6 +71,6 @@ $(function(){
     $(".chat-group-users").on("click",".user-search-remove",function(){
       $(this).parent().remove();
     })
-
+    
 });
 });
