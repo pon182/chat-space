@@ -15,7 +15,7 @@
             Members:
             - @group.users.each do |user|
               =user.name
-        = link_to "/groups/#{current_user.id}/edit" ,class:  "link" do
+        = link_to edit_group_path(@group) ,class:  "link" do
           .header__edit
             edit
       .body-right--main
