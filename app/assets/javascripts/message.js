@@ -1,6 +1,7 @@
+$(document).on('turbolinks:load',function(){
 $(function (){
   function buildHTML(message){
-    var addImage = message.image_url == null ?  "" : `<img src= "${message.image_url}"  class = "lower-message__image" alt="">` 
+    var addImage = message.image_url == null ?  "" : `<img src= "${message.image_url}"  class = "lower-message__image" data-message-img="${message.id}" alt="">` 
 
     var html =`<div class ="group__comment">
                 <strong>
@@ -10,9 +11,11 @@ $(function (){
                    ${message.date}
                 </div>
                 <div class="comment__text">
-                  <p>${message.content}</p>
-                  ${addImage}
+                  <p data-message-comment="${message.id}">${message.content}</p>
                 </div>
+                <div class="comment__image">
+                  ${addImage}
+                </div
               </div>`
     return html;
 
@@ -23,7 +26,7 @@ $(function (){
     $('.body-right--main').animate({scrollTop: $('.body-right--main')[0].scrollHeight}, 'fast');
    
     var formData = new FormData(this);
-    var href = window.location.href
+    var href = window.location.href;
     
 
     $.ajax({
@@ -46,6 +49,42 @@ $(function (){
       $('.form__submit').attr('disabled', false);
       alert('テキスト入力')
     })
-
   });
+  
+
+
+
+  var reloadMessages = function() {
+
+    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+    last_message_id =$('p:last').data("message-comment")
+
+    var group_id = location.pathname.split('/')[2];
+    console.log(group_id)
+
+    
+    $.ajax({
+      url: `/groups/${group_id}/api/messages`,
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    
+    
+
+    .done(function(messages) {
+      messages.forEach(function(message){
+        var insertHTML = buildHTML(message);
+      $(".upper-info").append(insertHTML);
+      $('.body-right--main').animate({scrollTop: $('.body-right--main')[0].scrollHeight}, 'fast');
+      })   
+    }) 
+
+    .fail(function() {
+          console.log('error');
+     });
+  };
+  
+  setInterval(reloadMessages, 3000);
+});
 });
