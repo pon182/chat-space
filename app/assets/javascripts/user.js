@@ -19,12 +19,14 @@ $(function(){
     // 検索で打ち込まれた要素
     var input = $('#user-search-field').val();
    
+     
     $.ajax({
       type: 'GET',
       url: '/users',
       data: {key_word: input},
       dataType: 'json'
     })
+    
 
     .done(function(users){
       // 検索した要素を削除

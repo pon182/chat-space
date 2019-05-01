@@ -77,7 +77,12 @@
 
 
                                         // 右大枠
+.body-right{
+    height: 100vh;
+    width: calc(100vw - 300px);
+    float: right;
 
+}
 
                                         // 右ヘッダー
 .body-right--header{
