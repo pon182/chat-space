@@ -52,39 +52,48 @@ $(function (){
   });
   
 
+  $(function(){
+    
+  
 
-
-  var reloadMessages = function() {
+    var reloadMessages = function(messages) {
 
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id =$('p:last').data("message-comment")
+    var groupId = $('p').data("group-id")
 
-    var group_id = location.pathname.split('/')[2];
-    console.log(group_id)
+           var url   = location.pathname;
+    var groupId = $('p').data("group-id")
 
-    
+    if(url == `/groups/${groupId}/messages`){
+    // var group_id = location.pathname.split('/')[2];
+    // var url = 'api/messages'
     $.ajax({
-      url: `/groups/${group_id}/api/messages`,
+      url: `/groups/${groupId}/api/messages`,
       type: 'get',
       dataType: 'json',
       data: {id: last_message_id}
     })
     
-    
-
+  
     .done(function(messages) {
       messages.forEach(function(message){
         var insertHTML = buildHTML(message);
       $(".upper-info").append(insertHTML);
-      $('.body-right--main').animate({scrollTop: $('.body-right--main')[0].scrollHeight}, 'fast');
-      })   
+      var message =$('p:last').data("message-comment")
+      if (message > last_message_id){
+      $('.body-right--main').animate({scrollTop: $('.body-right--main')[0].scrollHeight}, 'fast')}
+      })
     }) 
 
     .fail(function() {
           console.log('error');
      });
   };
-  
+}
   setInterval(reloadMessages, 3000);
+
+
+});
 });
 });

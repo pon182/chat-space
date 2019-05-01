@@ -3,7 +3,7 @@ class Api::MessagesController < ApplicationController
   
   def index
     respond_to do |format| 
-      format.json { @messages = @group.messages.where('id > ?',params[:id]) }
+      format.json { @messages = @group.messages.where('id > ?',params[:id])}
     end 
   end
 
