@@ -58,10 +58,11 @@ $(function (){
 
         var url   = location.pathname;
         var groupId = $('p').data("group-id")
-
-        if(url == `/groups/${groupId}/messages`){
         // var group_id = location.pathname.split('/')[2];
         // var url = 'api/messages'
+        
+        if(url == `/groups/${groupId}/messages`){
+
         $.ajax({
           url: `/groups/${groupId}/api/messages`,
           type: 'get',
