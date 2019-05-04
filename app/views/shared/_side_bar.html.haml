@@ -2,7 +2,7 @@
   .body-left--header
     .left-header--user-name
       %strong
-        aaaaaa
+        = "#{current_user.name}"
     .left-header__icon
       = link_to "/groups/new" ,class: "link" do
         %i.fa.fa-edit
